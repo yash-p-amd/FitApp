@@ -8,5 +8,5 @@
 
 Here's what it looks like in action. (UX IS IN EARLY STAGE)( Wait for GIF )
 
-![Alt Text](https://github.com/YASH12366/PayTrail/blob/master/PayTrailDemo.gif)
+![Alt Text](https://github.com/YASH12366/FitApp/blob/master/FitAppDemo.gif)
 
