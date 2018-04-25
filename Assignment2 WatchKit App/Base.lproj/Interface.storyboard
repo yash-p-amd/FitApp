@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14109" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc" pageOrientation="vertical">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14031"/>
+    </dependencies>
+    <scenes>
+        <!--InterfaceController-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller identifier="InterfaceController" backgroundImage="BackGround" fullScreen="YES" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Assignment2_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <button width="0.90000000000000002" alignment="center" verticalAlignment="center" title="Walking" id="cLk-g2-rqq">
+                            <color key="titleColor" red="0.97851103544235229" green="0.73399311304092407" blue="0.023556271567940712" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="Walking" destination="AgC-eL-Hgc" id="fDA-oA-cag"/>
+                            </connections>
+                        </button>
+                        <button width="0.90000000000000002" alignment="center" verticalAlignment="center" title="Running" id="CbQ-9O-gIw">
+                            <color key="titleColor" red="0.97851103544235229" green="0.73399311304092407" blue="0.023556271567940712" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="Running" destination="AgC-eL-Hgc" id="HGG-nX-R0y"/>
+                            </connections>
+                        </button>
+                        <button width="0.90000000000000002" alignment="center" verticalAlignment="center" title="Cycling" id="8pC-gw-8fs">
+                            <color key="titleColor" red="0.97851103544235229" green="0.73399311304092407" blue="0.023556271567940712" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="Cycling" destination="AgC-eL-Hgc" id="kfQ-ZX-sm6"/>
+                            </connections>
+                        </button>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--InterfaceControllerUserInput-->
+        <scene sceneID="FMh-Ba-P19">
+            <objects>
+                <controller identifier="InterfaceControllerUserInput" fullScreen="YES" id="7kd-Sa-VDY" customClass="InterfaceControllerUserInput" customModule="Assignment2_WatchKit_Extension">
+                    <items>
+                        <group width="0.90000000000000002" height="0.40000000000000002" alignment="center" verticalAlignment="center" id="W1I-tP-aU7">
+                            <items>
+                                <picker width="0.5" widthAdjustment="-3" height="1" heightAdjustment="-5" alignment="center" verticalAlignment="bottom" semanticContentAttribute="playback" focusStyle="sequence" id="kwD-XM-qRQ">
+                                    <connections>
+                                        <action selector="weigInput_Action:" destination="7kd-Sa-VDY" id="oVn-x1-R4Y"/>
+                                    </connections>
+                                </picker>
+                                <picker width="0.5" widthAdjustment="-3" height="1" heightAdjustment="-5" alignment="center" verticalAlignment="bottom" focusStyle="sequence" id="Iyw-9A-Zdk">
+                                    <connections>
+                                        <action selector="weighOptions_Action:" destination="7kd-Sa-VDY" id="OIE-oY-fek"/>
+                                    </connections>
+                                </picker>
+                            </items>
+                        </group>
+                        <group width="0.90000000000000002" height="0.40000000000000002" alignment="center" verticalAlignment="center" id="gK8-js-seG">
+                            <items>
+                                <picker width="0.5" widthAdjustment="-3" height="1" heightAdjustment="-5" alignment="center" focusStyle="sequence" id="Ysm-vv-2mB">
+                                    <connections>
+                                        <action selector="distanceInput_Action:" destination="7kd-Sa-VDY" id="48Y-M1-yMm"/>
+                                    </connections>
+                                </picker>
+                                <picker width="0.5" widthAdjustment="-3" height="1" heightAdjustment="-5" alignment="center" focusStyle="sequence" id="fCI-Kv-Auu">
+                                    <connections>
+                                        <action selector="distanceOptions_Action:" destination="7kd-Sa-VDY" id="Vjk-NB-BJE"/>
+                                    </connections>
+                                </picker>
+                            </items>
+                        </group>
+                        <button width="0.90000000000000002" height="30" alignment="center" verticalAlignment="center" title="Go" id="A5R-ip-JVy">
+                            <color key="titleColor" red="0.97851103544235229" green="0.73399311304092407" blue="0.023556271567940712" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="font" type="system" pointSize="15"/>
+                            <connections>
+                                <action selector="Go" destination="7kd-Sa-VDY" id="vh3-Gm-6iw"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="distanceInput" destination="Ysm-vv-2mB" id="MkU-km-o6J"/>
+                        <outlet property="distanceOptions" destination="fCI-Kv-Auu" id="TuY-1x-P99"/>
+                        <outlet property="weigInput" destination="kwD-XM-qRQ" id="DfZ-Op-5Ku"/>
+                        <outlet property="weighOptions" destination="Iyw-9A-Zdk" id="k7H-wd-g3L"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="507" y="343"/>
+        </scene>
+        <!--InterfaceControllerProcessInput-->
+        <scene sceneID="fqr-v1-v2C">
+            <objects>
+                <controller identifier="InterfaceControllerProcessInput" backgroundImage="BackGround" fullScreen="YES" id="A2p-9U-l7t" customClass="InterfaceControllerProcessInput" customModule="Assignment2_WatchKit_Extension">
+                    <items>
+                        <button width="0.90000000000000002" alignment="center" verticalAlignment="center" title="Start" id="xDH-zV-IwD">
+                            <color key="titleColor" red="0.97851103539999995" green="0.73399311300000003" blue="0.023556271569999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="Start" destination="A2p-9U-l7t" id="Ll7-Lg-3EE"/>
+                            </connections>
+                        </button>
+                        <timer alignment="center" verticalAlignment="center" textAlignment="center" baselineAdjustment="alignCenters" previewedSeconds="3600" id="fnD-Iq-Jtk"/>
+                        <button width="0.90000000000000002" alignment="center" verticalAlignment="center" title="Stop" id="u4e-Hq-iGJ">
+                            <color key="titleColor" red="0.97851103539999995" green="0.73399311300000003" blue="0.023556271569999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="Stop" destination="A2p-9U-l7t" id="4VP-nr-yh2"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="start_pause" destination="xDH-zV-IwD" id="Ige-ZA-41d"/>
+                        <outlet property="timer" destination="fnD-Iq-Jtk" id="Ik2-kZ-Kq4"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="742" y="343"/>
+        </scene>
+        <!--InterfaceControllerDisplayResult-->
+        <scene sceneID="ISY-ax-TbM">
+            <objects>
+                <controller identifier="InterfaceControllerDisplayResult" id="1Ds-A2-qd8" customClass="InterfaceControllerDisplayResult" customModule="Assignment2_WatchKit_Extension">
+                    <items>
+                        <group width="0.80000000000000004" height="0.69999999999999996" alignment="center" id="vNW-xN-r3a">
+                            <items>
+                                <activity alignment="center" verticalAlignment="center" id="g7F-0M-d5O"/>
+                            </items>
+                        </group>
+                        <label alignment="center" verticalAlignment="center" text="Label" id="761-56-8wK"/>
+                    </items>
+                    <connections>
+                        <outlet property="DisplayBunredCals" destination="761-56-8wK" id="hpo-px-dtF"/>
+                        <outlet property="ResultRing" destination="g7F-0M-d5O" id="pSM-oh-Ma6"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="980" y="343"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="Assignment2_WatchKit_App" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+    </scenes>
+</document>
