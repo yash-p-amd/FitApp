@@ -26,7 +26,7 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
 	<key>WKCompanionAppBundleIdentifier</key>
-	<string>paytrail.FitApp</string>
+	<string>paytrail.Assignment2</string>
 	<key>WKWatchKitApp</key>
 	<true/>
 </dict>
