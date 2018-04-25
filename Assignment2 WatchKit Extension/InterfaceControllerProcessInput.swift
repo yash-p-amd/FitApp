@@ -12,7 +12,13 @@ import Foundation
 
 class InterfaceControllerProcessInput: WKInterfaceController {
 
-
+    
+    var startTime : NSDate? = nil
+    var pauseTime : NSDate? = nil
+    
+    var initTime : NSDate? = nil
+    
+    
     
     var PassDataObj = PassData()
     
@@ -37,6 +43,9 @@ class InterfaceControllerProcessInput: WKInterfaceController {
 //        print(PassDataObj.weigh)
 //        print(PassDataObj.weighType)
         
+        
+        initTime = NSDate(timeIntervalSinceNow:0)
+        
         // Configure interface objects here.
     }
 
@@ -60,22 +69,50 @@ class InterfaceControllerProcessInput: WKInterfaceController {
         
         if isStart
         {
-
+            startTime = NSDate()
+            timer.setDate(initTime! as Date)
             timer.start()
             gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(runTimedCode), userInfo: nil, repeats: true)
-            
-            start_pause.setTitle("Pause")
+
+
             isStart = false
             isPause = true
+            start_pause.setTitle("Pause")
         }
         else if isPause
         {
             timer.stop()
+            
+            pauseTime = NSDate()
+            initTime = NSDate(timeIntervalSinceNow: CFDateGetTimeIntervalSinceDate(startTime, pauseTime))
             gameTimer.invalidate()
-            start_pause.setTitle("Start")
+
             isPause = false
             isStart = true
+            start_pause.setTitle("Start")
         }
+        
+        
+//        if isStart
+//        {
+//            timer.start()
+//            gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(runTimedCode), userInfo: nil, repeats: true)
+//
+//            start_pause.setTitle("Pause")
+//            isStart = false
+//            isPause = true
+//        }
+//        else if isPause
+//        {
+//
+//
+//
+//            timer.stop()
+//            gameTimer.invalidate()
+//            start_pause.setTitle("Start")
+//            isPause = false
+//            isStart = true
+//        }
         
     }
     
@@ -88,6 +125,10 @@ class InterfaceControllerProcessInput: WKInterfaceController {
     @IBAction func Stop() {
         
         timer.stop()
+        
+        
+        
+        print(CFDateGetTimeIntervalSinceDate(pauseTime, startTime))
         
         PassDataObj.time = self.seconds
         pushController(withName: "InterfaceControllerDisplayResult", context: PassDataObj)
